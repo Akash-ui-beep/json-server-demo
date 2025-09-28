@@ -1,0 +1,90 @@
+Step 1 — Create Backend on Render
+
+Sign in to Render.
+
+Click New → Web Service.
+
+Connect your GitHub repository containing:
+
+package.json
+
+server.js
+
+db.json
+
+Configure the service:
+
+Name: json-server-demo
+
+Branch: main
+
+Language: Node
+
+Build Command: npm install
+
+Start Command: npm start
+
+Instance Type: Free
+
+Click Create Web Service.
+
+Wait for deployment → Render provides a live backend URL (e.g., https://json-server-demo-fw3t.onrender.com/products).
+
+Step 2 — Create Frontend Online in CodeSandbox
+
+Go to CodeSandbox
+ → Create Sandbox → HTML + CSS template.
+
+Set fields:
+
+Name: microservice-frontend
+
+Visibility: Private (or Public if you want to share)
+
+Folder: Default / Drafts
+
+Step 3 — Add Frontend Files
+
+index.html → HTML layout + Add Product form.
+
+style.css → Styling for form and product cards.
+
+script.js → JavaScript to fetch and add products.
+
+Make sure index.html links correctly:
+
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
+
+Step 4 — Connect Frontend to Backend
+
+In script.js, set the Render backend URL:
+
+const apiUrl = 'https://json-server-demo-fw3t.onrender.com/products';
+
+
+Use fetch() to:
+
+Load all products (GET)
+
+Add a new product (POST)
+
+Step 5 — Preview and Test
+
+Click Preview in CodeSandbox.
+
+Verify:
+
+Product list loads dynamically from Render.
+
+Add Product form works → new products appear immediately.
+
+Check browser console for errors → should be none.
+
+Step 6 — Optional / Notes
+
+Backend → Always accessible via Render URL; free instances may “wake up” if idle.
+
+Frontend → Runs in CodeSandbox; for permanent access, can be hosted on GitHub Pages or Netlify.
+
+You now have a fully functional online microservices experiment. ✅
